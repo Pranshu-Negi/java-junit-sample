@@ -16,11 +16,11 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Pipeline.Workspace)'
-    ArtifactName: 'Build+Publish'
+    ArtifactName: 'Build&+ Publish'
 
 - task: DownloadBuildArtifacts@0
   inputs:
     buildType: 'current'
     downloadType: 'single'
-    artifactName: 'Build+Publish'
+    artifactName: 'Build&+ Publish'
     downloadPath: '$(Pipeline.Workspace)'
