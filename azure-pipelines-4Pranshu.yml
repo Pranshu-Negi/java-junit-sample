@@ -6,20 +6,18 @@ trigger: none
 #    - agent.name -equals TestBuildArtifact
 
 pool: 
-    vmImage: 'ubuntu-latest'
+    vmImage: 'windows-latest'
 
 steps:
 
 - task: PublishBuildArtifacts@1
-  name: 'PublishBuildArtifacts1_drop_9234857'
   inputs:
     PathtoPublish: '$(Pipeline.Workspace)'
-    ArtifactName: 'drop & 9234857'
-    publishLocation: 'Container'
+    ArtifactName: 'Build & Publish'
 
 - task: DownloadBuildArtifacts@0
   inputs:
     buildType: 'current'
     downloadType: 'single'
-    artifactName: 'drop & 9234857'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    artifactName: 'Build & Publish'
+    downloadPath: '$(Pipeline.Workspace)'
