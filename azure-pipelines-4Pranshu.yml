@@ -15,12 +15,13 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
+    versionSpec: '0.200.0'
     PathtoPublish: '$(Pipeline.Workspace)'
     ArtifactName: 'Build & Publish'
 
 - task: DownloadBuildArtifacts@0
-  retryCountOnTaskFailure: 0
   inputs:
+    versionSpec: '0.206.0'
     buildType: 'current'
     downloadType: 'single'
     artifactName: 'Build & Publish'
