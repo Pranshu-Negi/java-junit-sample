@@ -18,8 +18,7 @@ steps:
     PathtoPublish: '$(Pipeline.Workspace)'
     ArtifactName: 'Build & Publish'
 
-- task: DownloadBuildArtifacts@0.206.0
-  retryCountOnTaskFailure: 1
+- task: DownloadBuildArtifacts@0
   inputs:
     buildType: 'current'
     downloadType: 'single'
