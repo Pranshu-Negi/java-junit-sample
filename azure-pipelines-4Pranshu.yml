@@ -17,7 +17,7 @@ steps:
   inputs:
     PathtoPublish: '$(Pipeline.Workspace)'
     ArtifactName: 'Build & Publish'
-    MaxArtifactSize: 80000
+    MaxArtifactSize: 'tree'
 
 - task: DownloadBuildArtifacts@0
   inputs:
